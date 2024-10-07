@@ -17,7 +17,76 @@
 		</div>
 		<p class="headerName">{{ site.app_name }}</p>
 	</div>
-	<nav class="scroll">
+	<nav class="scroll"> <!-- FIXME: use a links to real content once available. -->
+		<ul>
+			{% if site.facebook_username %}
+			<li>
+				<a href="https://facebook.com/{{ site.facebook_username }}">
+					<span class="fa-stack fa-1x">
+						<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
+						<i class="socialIconTop fab fa-facebook fa-stack-1x"></i>
+					</span>
+				</a>
+			</li>
+			{% endif %}
+
+			{% if site.twitter_username %}
+			<li>
+				<a href="https://twitter.com/{{ site.twitter_username }}">
+					<span class="fa-stack fa-1x">
+						<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
+						<i class="socialIconTop fab fa-twitter fa-stack-1x"></i>
+					</span>
+				</a>
+			</li>
+			{% endif %}
+
+			{% if site.instagram_username %}
+			<li>
+				<a href="https://instagram.com/{{ site.instagram_username }}">
+					<span class="fa-stack fa-1x">
+						<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
+						<i class="socialIconTop fab fa-instagram fa-stack-1x"></i>
+					</span>
+				</a>
+			</li>
+			{% endif %}
+
+			{% if site.mastodon_link %}
+			<li>
+				<a rel="me" href="{{ site.mastodon_link }}">
+					<span class="fa-stack fa-1x">
+						<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
+						<i class="socialIconTop fab fa-mastodon fa-stack-1x"></i>
+					</span>
+				</a>
+			</li>
+			{% endif %}
+
+			{% if site.github_username %}
+			<li>
+				<a href="https://github.com/{{ site.github_username }}">
+					<span class="fa-stack fa-1x">
+						<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
+						<i class="socialIconTop fab fa-github fa-stack-1x"></i>
+					</span>
+				</a>
+			</li>
+			{% endif %}
+
+			{% if site.email_address %}
+			<li>
+				<a href="mailto:{{ site.email_address }}">
+					<span class="fa-stack fa-1x">
+						<i class="socialIconBack fas fa-circle fa-stack-2x"></i>
+						<i class="socialIconTop fas fa-envelope fa-stack-1x"></i>
+					</span>
+				</a>
+			</li>
+			{% endif %}
+		</ul>
+	</nav>
+	<!-- <nav class="scroll">
 		<ul>
 			{% for page in site.pages %}
 				{% if page.include_in_header == true %}
@@ -28,5 +97,5 @@
 				<li><a href="{{ site.presskit_download_link }}">Press Kit</a></li>
 			{% endif %}
 		</ul>
-	</nav>
+	</nav> -->
 </header>
